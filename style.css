@@ -1,0 +1,25 @@
+
+.chat-area {
+margin-top: 20px;
+}
+
+.message-area {
+position: fixed; 
+bottom: 20px; 
+width: inherit;
+}
+
+.name {
+	color: #4cae4c; 
+	font-size: 18px;
+}
+
+.message {
+	color: #a94442;
+	font-size: 18px;
+}
+
+.time {
+	float: right; 
+	font-size: 18px;
+}
