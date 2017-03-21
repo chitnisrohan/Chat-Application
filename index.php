@@ -1,3 +1,20 @@
+<?php
+include 'db.php';
+?>
+
+<?php
+if(isset($_POST['submit'])) {
+	$name = $_POST['name'];
+	$message = $_POST['message'];
+	$query = "INSERT INTO chat (name, message) values ('$name','$message')";
+	$run = $conn->query($query);
+	if($run) {
+		echo "<embed loop='false' src='chat.wav' hidden='true' autoplay='true'/>";
+	}
+	header('Location: index.php');
+}
+?>
+
 <html>
 <head>
 	<title> Chat Box </title>
@@ -21,7 +38,8 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link href="style.css" rel="stylesheet">
 </head>
-<body>
+
+<body onload="dynamicChat();">
 <div class="container-fluid row">
 	<div class="col-sm-3 hidden-xs"></div>
 	<div class="chat-area col-xs-12 col-sm-6">
